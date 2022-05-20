@@ -30,6 +30,10 @@ def va_speak(what: str):
                             put_yo=put_yo)
 
     #Воспроизведение
-    sd.play(audio, sample_rate * 1.05)
-    time.sleep((len(audio) / sample_rate) + 0.5)
+    # sd.play(audio, sample_rate * 1.05)
+    # time.sleep((len(audio) / sample_rate) + 0.5)
+    # sd.stop()
+
+    sd.play(audio, sample_rate)
+    time.sleep(len(audio) / sample_rate)
     sd.stop()
