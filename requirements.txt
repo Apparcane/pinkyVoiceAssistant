@@ -1,0 +1,1 @@
+pip install torch sounddevice datetime webbrowser pyautogui fuzzywuzzy vosk
