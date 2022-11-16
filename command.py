@@ -10,7 +10,7 @@ def execute_cmd(cmd: str):
         text = "Я умею: ..."
         text += "произносить время ..."
         text += "рассказывать анекдоты ..."
-        text += "и открывать браузер"
+        text += "и ещё пару функций))"
         tts.va_speak(text)
 
     if cmd == 'ctime':
@@ -32,3 +32,14 @@ def execute_cmd(cmd: str):
 
     if cmd == 'diplom':
         present()
+        
+    if cmd == 'thanks':
+        text = ['Всегда рада помочь.',
+                'Не за что благодарить меня, я всего лишь выполняю свою работу.',
+                'Всегда к вашим услугам.']
+        tts.va_speak(random.choice(text))    
+        
+    if cmd == 'exit':
+        text = "Надеюсь вы вскоре снова меня запустите ..."
+        tts.va_speak(text)
+        exit(0)
