@@ -1,4 +1,3 @@
-from diplom import present
 import datetime
 import webbrowser
 import random
@@ -7,39 +6,36 @@ import tts
 def execute_cmd(cmd: str):
     if cmd == 'help':
         # help
-        text = "Я умею: ..."
-        text += "произносить время ..."
-        text += "рассказывать анекдоты ..."
-        text += "и ещё пару функций))"
+        text = "Я вмію: ..."
+        text += "вимовляти час ..."
+        text += "розповідати анекдоти ..."
+        text += "і ще кілька функцій))"
         tts.va_speak(text)
 
     if cmd == 'ctime':
         # current time
         now = datetime.datetime.now()
-        text = "Сейч+ас " + now.hour + " : " + now.minute
+        text = "Зараз " + str(now.hour) + " : " + str(now.minute)
         tts.va_speak(text)
-    
+
     if cmd == 'joke':
-        jokes = ['Как смеются программисты? ... ехе ехе ехе',
-                 'ЭсКьюЭль запрос заходит в бар, подходит к двум столам и спрашивает .. «м+ожно присоединиться?»',
-                 'Программист это машина для преобразования кофе в код']
+        jokes = ['Як сміються програмісти? ... хе-хе-хе',
+                "Еск'юел запит заходить у бар, підходить до двох столів і запитує .. «можна приєднатися?»",
+                'Програміст це машина для перетворення кави в код']
 
         tts.va_speak(random.choice(jokes))
 
     if cmd == 'open_browser':
         opera_path = 'C:/Users/brodi/AppData/Local/Programs/Opera GX/opera.exe'
         webbrowser.get(opera_path).open("http://python.org")
-
-    if cmd == 'diplom':
-        present()
         
     if cmd == 'thanks':
-        text = ['Всегда рада помочь.',
-                'Не за что благодарить меня, я всего лишь выполняю свою работу.',
-                'Всегда к вашим услугам.']
+        text = ['Завжди рада допомогти.',
+                'Не за що дякувати мене, я просто виконую свою роботу.',
+                'Завжди до ваших послуг.']
         tts.va_speak(random.choice(text))    
         
     if cmd == 'exit':
-        text = "Надеюсь вы вскоре снова меня запустите ..."
+        text = "Сподіваюся, ви скоро знову запустите мене ..."
         tts.va_speak(text)
         exit(0)

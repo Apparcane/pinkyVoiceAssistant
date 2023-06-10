@@ -6,16 +6,16 @@ import os
 # language = 'ru'
 # model_id = 'ru_v3'
 sample_rate = 48000
-speaker = 'baya'  # aidar baya kseniya xenia
+speaker = 'mykyta'  # aidar baya kseniya xenia  mykyta
 put_accent = True
 put_yo = True
 device = torch.device('cpu')
-text = "Привет мой господин, я слушаю и повенуюсь!"
+text = "Да сер!"
 
-local_file = 'model.pt'
+local_file = 'v3_ua.pt'
 
 if not os.path.isfile(local_file):
-    torch.hub.download_url_to_file('https://models.silero.ai/models/tts/ru/ru_v3.pt',
+    torch.hub.download_url_to_file('https://models.silero.ai/models/tts/ua/v3_ua.pt',
                                    local_file)  
 
 

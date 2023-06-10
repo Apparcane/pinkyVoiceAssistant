@@ -15,7 +15,7 @@ def va_respond(voice: str):
         cmd = recognize_cmd(filter_cmd(voice))
 
         if cmd['cmd'] not in config.VA_CMD_LIST.keys():
-            tts.va_speak("Либо я вас не расслышала, либо я не зню такой команды.")
+            tts.va_speak("Або я вас не почув, або я не знаю такої команди.")
         else:
             execute_cmd(cmd['cmd'])
 
@@ -42,4 +42,4 @@ def recognize_cmd(cmd: str):
 
     return rc
 
-stt.va_listen(va_respond)   
+stt.va_listen(va_respond)
